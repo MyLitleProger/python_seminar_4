@@ -52,3 +52,35 @@ min_x = min_num(x)
 print(min_x)
 numbers = str(max_x) + ' ' + str(min_x)
 print(numbers)
+
+s = ''
+# hash_tag = '#'
+# s = s.replace(' ', '')
+# if len(s) < 140 and len(s) != '':
+#     print(hash_tag + s)
+
+print(('#' + s.title().replace(' ', ''))\
+          if len(s.replace(' ', '')) < 140\
+          and s != ''\
+          else False)
+
+print('#'*50)
+import string
+text = 'STDERR'
+print(*[string.ascii_lowercase.index(i.lower()) for i in text])
+
+def alphabet_position(text):
+    s = [string.ascii_lowercase.index(i.lower()) for i in text]
+    z = [int(i+1) for i in s]
+    return ' '.join(str(x) for x in z)
+def alphabet_position_1(text):
+    return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
+
+def alphabet_position_2(s):
+  return " ".join(str(ord(c)-ord("a")+1) for c in s.lower() if c.isalpha())
+
+print(alphabet_position(text))
+print(alphabet_position_1(text))
+print(alphabet_position_2(text))
+
+print('#'*50)
